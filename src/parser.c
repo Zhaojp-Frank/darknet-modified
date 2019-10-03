@@ -2057,13 +2057,14 @@ void load_convolutional_weights(layer l, FILE *fp)
     puts("");
 MARK:
 TL:
-    1024 cutting mantissa for (int i = 0; i < num; i++)
+    //1024 cutting mantissa for (int i = 0; i < num; i++)
+    for (int i = 0; i < num; i++)
     {
         int base = 12800;
         int mantissa = 23;
         union ui32_f32 {
             float f;
-            uint32_t ui;
+            unsigned int ui;
         } uA;
         //cut the mantissa and exponents
         uA.f = l.weights[i];
